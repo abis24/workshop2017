@@ -1,13 +1,14 @@
-def transcribe (dna):
-    rna = ""
-    for nucleotide in dna:
-        if (nucleotide == 'T'):
-            rna = rna + 'U'
-        else:
-            rna = rna + nucleotide
-    return (rna)
+file = open("../rosalind_input/rna.txt","r")
+dnaFromFile = file.readline()
+dna = dnaFromFile.strip()
+# dna ="GATGGAACTTGACTACGTAAATT"
+rna = ""
 
-if __name__ ==  "__main__":
-    with open("rna.txt") as file:
-        dna = file.readline().strip()
-    print (transcribe(dna))
+# this for loop loops through every nucleotide
+for nu in dna:
+	if nu == "T":
+		rna = rna + "U"
+	else:
+		rna = rna + nu
+	
+print (rna)
